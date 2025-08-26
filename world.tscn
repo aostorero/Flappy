@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://l4mr7gyo6m4y"]
+
+[ext_resource type="PackedScene" uid="uid://b85jdso0qqy5x" path="res://wall_spawner.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://dali6ygbhkbvh" path="res://player.tscn" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://dk1542vh3r2va" path="res://points_ui.tscn" id="3_tlwt5"]
+
+[node name="World" type="Node2D"]
+
+[node name="WallSpawner" parent="." instance=ExtResource("2_fj7yv")]
+position = Vector2(1152, 320)
+
+[node name="Player" parent="." instance=ExtResource("2_tlwt5")]
+position = Vector2(368, 272)
+
+[node name="PointsUI" parent="." instance=ExtResource("3_tlwt5")]
