@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dali6ygbhkbvh"]
+
+[ext_resource type="Script" uid="uid://2xnbjtc4alve" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ojqxmeyrugq1" path="res://icon.svg" id="2_i3pqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(128, 128)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.65, 0.65)
+script = ExtResource("1_onrkg")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_i3pqv")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
