@@ -20,3 +20,10 @@ func _on_timer_timeout() -> void:
 		timer.start()
 	else:
 		pass
+
+func _on_player_died() -> void:
+	timer.stop()
+	
+	for pared in get_tree().get_nodes_in_group("walls"):
+		pared.velocity.x = 0
+		pared.set_physics_process(false)

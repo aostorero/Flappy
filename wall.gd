@@ -20,6 +20,7 @@ func _ready() -> void:
 		hole_collision_shape.shape = RectangleShape2D.new()
 	hole_area.body_entered.connect(_on_hole_area_body_entered)
 	generate_wall()
+	add_to_group("walls")
 
 func _physics_process(delta: float) -> void:
 	velocity.x = speed
